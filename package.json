@@ -48,11 +48,15 @@
   },
   "homepage": "https://github.com/HackYourFuture/final-project-template#readme",
   "devDependencies": {
+    "autoprefixer": "^10.5.0",
     "axios": "^1.6.8",
     "cypress": "^13.8.1",
-    "husky": "^9.0.0"
+    "husky": "^9.0.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19"
   },
   "dependencies": {
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.1.0",
+    "mongodb": "^7.2.0"
   }
 }
