@@ -1,10 +1,14 @@
 import { BrowserRouter as Router } from "react-router-dom";
+import { CartProvider } from "./context/CartContext"; // <--- Add this
 
-/**
- * This component wraps our App with the providers we do not want to have in our tests
- */
 const AppWrapper = ({ children }) => {
-  return <Router>{children}</Router>;
+  return (
+    <CartProvider>
+      {" "}
+      {/* <--- Add this */}
+      <Router>{children}</Router>
+    </CartProvider>
+  );
 };
 
 export default AppWrapper;

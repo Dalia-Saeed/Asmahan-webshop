@@ -1,11 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const Nav = () => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+  const { cartItems } = useCart();
 
   return (
-    <nav className="bg-asmahan-beige border-b border-asmahan-lightGold px-8 py-6">
+    <nav className="sticky top-0 z-50 bg-asmahan-beige border-b border-asmahan-lightGold px-8 py-6 shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo Section */}
         <div>
@@ -46,14 +48,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link
-              to="/about"
-              className={
-                isActive("/about")
-                  ? "text-asmahan-gold border-b border-asmahan-gold pb-1"
-                  : "hover:text-asmahan-gold transition"
-              }
-            >
+            <Link to="/about" className="hover:text-asmahan-gold transition">
               About
             </Link>
           </li>
@@ -64,6 +59,7 @@ const Nav = () => {
           <Link to="/login" className="hover:opacity-70">
             Login
           </Link>
+
           <Link to="/cart" className="relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +75,12 @@ const Nav = () => {
                 d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.112 11.5a.75.75 0 0 1-.745.822H4.027a.75.75 0 0 1-.745-.822l1.112-11.5a.75.75 0 0 1 .745-.672h13.242a.75.75 0 0 1 .746.672Z"
               />
             </svg>
+
+            {cartItems.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-asmahan-gold text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
+                {cartItems.length}
+              </span>
+            )}
           </Link>
         </div>
       </div>
