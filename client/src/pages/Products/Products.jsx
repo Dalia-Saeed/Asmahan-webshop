@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import { useCart } from "../../context/CartContext";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
+  // Get the addToCart function from Context
+  const { addToCart } = useCart();
+
   useEffect(() => {
-    // We fetch directly from the proxy /api/products
     fetch("/api/products")
       .then((res) => {
         if (!res.ok) throw new Error("Could not fetch the collection");
         return res.json();
       })
       .then((data) => {
-        // We know from your screenshot the data is in data.result
         setProducts(data.result);
         setLoading(false);
       })
@@ -36,10 +38,9 @@ const Products = () => {
   if (errorMessage) {
     return (
       <div className="bg-asmahan-beige min-h-screen flex flex-col items-center justify-center p-10">
-        <h2 className="text-red-800 font-serif text-2xl mb-4 italic">
-          Connection Issue
+        <h2 className="text-red-800 font-serif text-2xl mb-4 italic text-center">
+          The collection is currently unreachable
         </h2>
-        <p className="text-asmahan-brown/60 text-sm mb-6">{errorMessage}</p>
         <button
           onClick={() => window.location.reload()}
           className="px-10 py-3 border border-asmahan-brown text-xs uppercase tracking-widest"
@@ -90,7 +91,11 @@ const Products = () => {
                 ${item.price}.00
               </p>
 
-              <button className="w-full border border-asmahan-brown/30 py-3 text-[10px] uppercase tracking-[0.2em] hover:bg-asmahan-brown hover:text-white transition-colors duration-500">
+              {/* REMOVED ALERT: Now it just adds silently to the cart */}
+              <button
+                onClick={() => addToCart(item)}
+                className="w-full border border-asmahan-brown/30 py-3 text-[10px] uppercase tracking-[0.2em] hover:bg-asmahan-brown hover:text-white transition-colors duration-300"
+              >
                 Add to Cart
               </button>
             </div>
