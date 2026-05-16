@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 const Nav = () => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
   const { cartItems } = useCart();
+  const { user, logout } = useAuth();
 
   return (
     <nav className="sticky top-0 z-50 bg-asmahan-beige border-b border-asmahan-lightGold px-8 py-6 shadow-sm">
@@ -56,10 +58,23 @@ const Nav = () => {
 
         {/* Icons Section */}
         <div className="flex items-center space-x-6 text-[12px] uppercase tracking-widest text-asmahan-brown">
-          <Link to="/login" className="hover:opacity-70">
-            Login
-          </Link>
-
+          {user ? (
+            <div className="flex items-center space-x-4">
+              <span className="text-[10px] uppercase font-bold text-asmahan-gold italic">
+                Hello, {user.name}
+              </span>
+              <button
+                onClick={logout}
+                className="hover:text-red-800 transition uppercase tracking-tighter"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="hover:opacity-70">
+              Login
+            </Link>
+          )}
           <Link to="/cart" className="relative">
             <svg
               xmlns="http://www.w3.org/2000/svg"
