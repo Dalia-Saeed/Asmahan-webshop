@@ -91,7 +91,12 @@ const Cart = () => {
             </span>
           </div>
           <button className="w-full md:w-1/2 bg-asmahan-brown text-white py-5 text-xs uppercase tracking-[0.3em] font-bold hover:bg-asmahan-gold hover:text-asmahan-brown transition duration-500 shadow-xl">
-            Proceed to Checkout
+            <Link
+              to="/checkout"
+              className="w-full md:w-1/2 bg-asmahan-brown text-center text-white py-5 text-xs uppercase tracking-[0.3em] font-bold hover:bg-asmahan-gold hover:text-asmahan-brown transition duration-500 shadow-xl inline-block"
+            >
+              Proceed to Checkout
+            </Link>
           </button>
           <Link
             to="/products"

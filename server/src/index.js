@@ -9,6 +9,7 @@ import connectDB from "./db/connectDB.js";
 import testRouter from "./testRouter.js";
 import productRoutes from "./routes/productRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 // The environment should set the port
 const port = process.env.PORT;
@@ -19,6 +20,7 @@ if (port == null) {
 }
 app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/orders", orderRoutes);
 
 const startServer = async () => {
   try {
