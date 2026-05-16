@@ -8,6 +8,7 @@ import { logInfo, logError } from "./util/logging.js";
 import connectDB from "./db/connectDB.js";
 import testRouter from "./testRouter.js";
 import productRoutes from "./routes/productRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 // The environment should set the port
 const port = process.env.PORT;
@@ -17,6 +18,7 @@ if (port == null) {
   logError(new Error("Cannot find a PORT number, did you create a .env file?"));
 }
 app.use("/api/products", productRoutes);
+app.use("/api/auth", authRoutes);
 
 const startServer = async () => {
   try {
