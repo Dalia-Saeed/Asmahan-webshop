@@ -6,6 +6,7 @@ import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Checkout from "./pages/Checkout/Checkout";
+import Vault from "./pages/Vault/Vault";
 
 // inside <Routes>
 <Route path="/register" element={<Register />} />;
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/vault" element={<Vault />} />
         </Routes>
       </main>
     </>

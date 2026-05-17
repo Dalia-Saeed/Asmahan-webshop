@@ -65,5 +65,32 @@ router.get("/all-users-debug", async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 });
+// Toggle Favorite (Like/Unlike)
+router.post("/toggle-favorite", async (req, res) => {
+  try {
+    const { userId, productId } = req.body;
+    const user = await User.findById(userId);
+
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    // Check if already in favorites
+    const isFavorite = user.favorites.includes(productId);
+
+    if (isFavorite) {
+      // Remove it
+      user.favorites = user.favorites.filter(
+        (id) => id.toString() !== productId,
+      );
+    } else {
+      // Add it
+      user.favorites.push(productId);
+    }
+
+    await user.save();
+    return res.json({ result: user.favorites });
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+});
 
 export default router;
