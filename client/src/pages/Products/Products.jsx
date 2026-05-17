@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Get the addToCart function from Context
+  // Get functions from our Context Brains
   const { addToCart } = useCart();
+  const { user, toggleFavorite } = useAuth();
 
   useEffect(() => {
     fetch("/api/products")
@@ -25,6 +27,7 @@ const Products = () => {
       });
   }, []);
 
+  // 1. LOADING STATE
   if (loading) {
     return (
       <div className="bg-asmahan-beige min-h-screen flex items-center justify-center">
@@ -35,6 +38,7 @@ const Products = () => {
     );
   }
 
+  // 2. ERROR STATE
   if (errorMessage) {
     return (
       <div className="bg-asmahan-beige min-h-screen flex flex-col items-center justify-center p-10">
@@ -51,6 +55,7 @@ const Products = () => {
     );
   }
 
+  // 3. MAIN SHOP UI
   return (
     <div className="bg-asmahan-beige min-h-screen text-asmahan-brown font-sans">
       <div className="max-w-7xl mx-auto px-8 py-16">
@@ -72,7 +77,31 @@ const Products = () => {
               key={item._id}
               className="group flex flex-col items-center text-center"
             >
+              {/* Image Container with Heart Button */}
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-white mb-6 shadow-sm border border-asmahan-lightGold/10">
+                {/* FAVORITE (HEART) BUTTON */}
+                <button
+                  onClick={() => toggleFavorite(item._id)}
+                  className="absolute top-4 right-4 z-30 p-2 bg-white/80 rounded-full shadow-sm hover:bg-white transition"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill={
+                      user?.favorites?.includes(item._id) ? "#c5a059" : "none"
+                    }
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="#c5a059"
+                    className="w-5 h-5 transition-colors duration-300"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                    />
+                  </svg>
+                </button>
+
                 <img
                   src={item.image}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -81,6 +110,7 @@ const Products = () => {
                 <div className="absolute inset-0 bg-asmahan-brown/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
+              {/* Product Info */}
               <p className="text-asmahan-gold text-[10px] tracking-[0.3em] uppercase mb-2 font-bold">
                 {item.category}
               </p>
@@ -91,7 +121,7 @@ const Products = () => {
                 ${item.price}.00
               </p>
 
-              {/* REMOVED ALERT: Now it just adds silently to the cart */}
+              {/* Add to Cart Button */}
               <button
                 onClick={() => addToCart(item)}
                 className="w-full border border-asmahan-brown/30 py-3 text-[10px] uppercase tracking-[0.2em] hover:bg-asmahan-brown hover:text-white transition-colors duration-300"
