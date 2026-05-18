@@ -11,60 +11,51 @@ const sampleProducts = [
     name: "Royal Oud Intense",
     price: 150,
     category: "Perfumes",
-    image:
-      "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800",
   },
   {
     name: "Golden Bakhoor",
     price: 45,
     category: "Bakhoor",
-    image:
-      "https://images.unsplash.com/photo-1595131838585-2450c527f6da?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1602166542330-36653866504b?w=800",
   },
   {
     name: "Silk Abaya Noir",
     price: 220,
     category: "Clothing",
-    image:
-      "https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=800",
   },
   {
     name: "Rose de Mai",
     price: 110,
     category: "Perfumes",
-    image:
-      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800",
   },
   {
     name: "Amber Musk",
     price: 95,
     category: "Perfumes",
-    image:
-      "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800",
   },
   {
     name: "Sandalwood Incense",
     price: 35,
     category: "Bakhoor",
-    image:
-      "https://images.unsplash.com/photo-1601614741214-722137582ba9?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1601614741214-722137582ba9?w=800",
   },
   {
     name: "Linen Summer Dress",
     price: 180,
     category: "Clothing",
-    image:
-      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800",
   },
   {
     name: "Gold Shimmer Oil",
     price: 55,
     category: "Beauty",
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bf87a931be?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1596462502278-27bf87a931be?w=800",
   },
 ];
-
 const seedDB = async () => {
   try {
     // We check for both names just in case

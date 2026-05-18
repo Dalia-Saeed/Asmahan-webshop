@@ -18,29 +18,28 @@ const Home = () => {
     {
       name: "Perfumes",
       image:
-        "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800",
-      path: "/products",
+        "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800",
+      path: "/products?cat=Perfumes", // <--- Added ?cat=Perfumes
     },
     {
       name: "Bakhoor",
       image:
-        "https://images.unsplash.com/photo-1602166542330-36653866504b?q=80&w=800",
-      path: "/products",
+        "https://images.unsplash.com/photo-1602166542330-36653866504b?w=800",
+      path: "/products?cat=Bakhoor", // <--- Added ?cat=Bakhoor
     },
     {
       name: "Clothing",
       image:
-        "https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800",
-      path: "/products",
+        "https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?w=800",
+      path: "/products?cat=Clothing", // <--- Added ?cat=Clothing
     },
     {
       name: "Beauty",
       image:
-        "https://images.unsplash.com/photo-1596462502278-27bf87a931be?q=80&w=800",
-      path: "/products",
+        "https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg?w=800",
+      path: "/products?cat=Beauty", // <--- Added ?cat=Beauty
     },
   ];
-
   return (
     <div className="bg-asmahan-beige min-h-screen font-sans text-asmahan-brown">
       {/* 1. HERO SECTION (Already done) */}
