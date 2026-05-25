@@ -19,25 +19,25 @@ const Home = () => {
       name: "Perfumes",
       image:
         "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800",
-      path: "/products?cat=Perfumes", // <--- Added ?cat=Perfumes
+      path: "/products?cat=Perfumes",
     },
     {
       name: "Bakhoor",
       image:
-        "https://images.unsplash.com/photo-1602166542330-36653866504b?w=800",
-      path: "/products?cat=Bakhoor", // <--- Added ?cat=Bakhoor
+        "https://www.adilqadri.com/cdn/shop/products/oudh-al-arab-bakhoor-incense-sticks-bukhur-chips-28395324244070.jpg?v=1631004537",
+      path: "/products?cat=Bakhoor",
     },
     {
       name: "Clothing",
       image:
         "https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?w=800",
-      path: "/products?cat=Clothing", // <--- Added ?cat=Clothing
+      path: "/products?cat=Clothing",
     },
     {
       name: "Beauty",
       image:
         "https://images.pexels.com/photos/3762466/pexels-photo-3762466.jpeg?w=800",
-      path: "/products?cat=Beauty", // <--- Added ?cat=Beauty
+      path: "/products?cat=Beauty",
     },
   ];
   return (
@@ -46,7 +46,7 @@ const Home = () => {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden mx-4 mt-4 rounded-lg shadow-xl">
         <div className="absolute inset-0 bg-black/20 z-10"></div>
         <img
-          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=2000"
+          src="https://ounass-ae.atgcdn.ae/contentful/b3xlytuyfm3e/2cod7EipkqHOp7fR8Km8WN/d736d943dcd0f86fd54e89053a11df38/banners-ounass1180x660_-_Rand_yahya.jpg?q=70"
           className="absolute inset-0 w-full h-full object-cover"
           alt="Hero"
         />
