@@ -11,37 +11,42 @@ const sampleProducts = [
     name: "Royal Oud Intense",
     price: 150,
     category: "Perfumes",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800",
+    image:
+      "https://www.myperfumeshop.com/cdn/shop/files/korloff-paris-royal-oud-intense-le-parfum-perfume-cologne-264176.jpg?v=1710967845&width=1024",
   },
   {
     name: "Golden Bakhoor",
     price: 45,
     category: "Bakhoor",
-    image: "https://images.unsplash.com/photo-1602166542330-36653866504b?w=800",
+    image:
+      "https://banafaforoud.com/wp-content/uploads/2025/12/Bakhoor-Bouquet-Gold-with-Copper-Incense-Burner.jpg",
   },
   {
     name: "Silk Abaya Noir",
     price: 220,
     category: "Clothing",
-    image: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=800",
+    image:
+      "https://i.pinimg.com/736x/4e/0d/6e/4e0d6e469e748176d5624efd9ab50bd8.jpg",
   },
   {
     name: "Rose de Mai",
     price: 110,
     category: "Perfumes",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800",
+    image: "https://fimgs.net/himg/o.VmLjLhcesm9.jpg",
   },
   {
     name: "Amber Musk",
     price: 95,
     category: "Perfumes",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800",
+    image:
+      "https://sgperfumes.com/cdn/shop/files/Data_Set_81_Data_Set_81.jpg?v=1769778574",
   },
   {
     name: "Sandalwood Incense",
     price: 35,
     category: "Bakhoor",
-    image: "https://images.unsplash.com/photo-1601614741214-722137582ba9?w=800",
+    image:
+      "https://kalla.in/cdn/shop/files/Kalla_Sandalwood_Insence_Stick.webp?v=1745582947",
   },
   {
     name: "Linen Summer Dress",
@@ -53,7 +58,8 @@ const sampleProducts = [
     name: "Gold Shimmer Oil",
     price: 55,
     category: "Beauty",
-    image: "https://images.unsplash.com/photo-1596462502278-27bf87a931be?w=800",
+    image:
+      "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTXaLCO5iOfCYwcBQa2vBsMNEotrvWwQklhRR2Nw8uhSP6saPH3xbn5Eq7Lrv57Tz6BA9V4zz7gVBE-4hOUZvcXXLDtT0647KuYes8g70Gy6eJabjsEEE_e",
   },
 ];
 const seedDB = async () => {
